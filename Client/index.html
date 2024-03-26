@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./style//style.css">
     <title>To Do</title>
-    <script type="text/javascript" src="./app.js"></script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> 
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </head>
 <body>
     <header>
@@ -19,15 +21,22 @@
     </section>
 
     <section class="formDiv">
-        <form action="">
+        <form action="" id="form">
             <h3>Add a task</h3>
             <div >
-                <input type="text" placeholder="Add a task ...">
+                <input type="text" placeholder="Add a task ..." id="name" />
             </div>
-                <button type="submit" style="margin-top: 1rem;">
+                <button type="submit"  id="submit"  style="margin-top: 1rem;">
                     Add
                 </button>
         </form>
     </section>
+    <p id="output"></p>
+
+    <!-- Script -->
+
+    <script src="app.js">
+        
+    </script>
 </body>
 </html>

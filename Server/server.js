@@ -12,6 +12,10 @@ app.use(cors());
 //  get css
 app.use('/style',express.static(path.join(__dirname,'..','Client/style')));
 
+app.use(express.static(path.join(__dirname,'..','Client')));
+
+// console.log(path.join(__dirname,'..','Client/app.js'));
+
 app.get('/', (req, res) => {
     const filePath = path.join(__dirname,'..' ,'Client/index.html');
     res.sendFile(filePath);

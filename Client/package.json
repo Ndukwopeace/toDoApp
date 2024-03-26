@@ -2,7 +2,23 @@
   "name": "client",
   "version": "1.0.0",
   "description": "",
+  "type": "commonjs",
   "main": "app.js",
+  "dependencies": {
+    "asynckit": "^0.4.0",
+    "axios": "^1.6.8",
+    "combined-stream": "^1.0.8",
+    "delayed-stream": "^1.0.0",
+    "follow-redirects": "^1.15.6",
+    "form-data": "^4.0.0",
+    "jquery": "^3.7.1",
+    "mime-db": "^1.52.0",
+    "mime-types": "^2.1.35",
+    "proxy-from-env": "^1.1.0"
+  },
+  "devDependencies": {
+    "parcel-bundler": "^1.12.5"
+  },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
