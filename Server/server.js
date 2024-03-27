@@ -1,7 +1,10 @@
 const express = require('express');
+// const bodyParser = require('body-parser');
 const app = express();
+
+
 const path = require('path');
-const cors = require('cors')
+const cors = require('cors');
 const taskRoute = require('../Server/routes/task.route')
 const port = 3000
 
@@ -13,6 +16,10 @@ app.use(cors());
 app.use('/style',express.static(path.join(__dirname,'..','Client/style')));
 app.use(express.static(path.join(__dirname,'..','Client')));
 
+app.use(cors());
+app.use(express.urlencoded({ extended: false}));
+app.use(express.json());
+app.use('/task', taskRoute);
 // console.log(path.join(__dirname,'..','Client/app.js'));
 
 app.get('/', (req, res) => {
