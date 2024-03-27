@@ -8,7 +8,7 @@ module.exports = {
             return res.status(200).json({ task: task });
 
         } catch (err) {
-            return res.sendStatus(500).json(err);
+            return res.status(500).json(err);
         }
     },
 
@@ -18,7 +18,7 @@ module.exports = {
             return res.status(200).json({ updatedTask: updatedTask });
 
         } catch (err) {
-            return res.sendStatus(500).json(err);
+            return res.status(500).json(err);
         }
     },
     getTasks: async (req, res) => {
@@ -27,7 +27,7 @@ module.exports = {
             return res.status(200).json({ Tasks: Tasks });
 
         } catch (err) {
-            return res.sendStatus(500).json(err);
+            return res.status(500).json(err);
         }
     },
     getOneTask: async (req, res) => {
@@ -37,7 +37,7 @@ module.exports = {
             return res.status(200).json({ Task: Task });
 
         } catch (err) {
-            return res.sendStatus(500).json(err);
+            return res.status(500).json(err);
         }
     },
 
@@ -47,7 +47,7 @@ module.exports = {
             return res.status(200).json("successfully deleted");
 
         } catch (err) {
-            return res.sendStatus(500).json(err);
+            return res.status(500).json(err);
         }
     }
 
