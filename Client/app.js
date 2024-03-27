@@ -11,8 +11,7 @@ $("#form").on("submit" , (e)=>{
         console.log(name);
        
             const todo = {name};
-        
-
+            
         fetch(Base_Url + "/create" , {
             method: "POST",
             body: JSON.stringify(todo),
