@@ -9,7 +9,9 @@ const taskRoute = require('../Server/routes/task.route')
 const port = 3000
 
 
-
+app.use(express.json());
+app.use(express.urlencoded({ extended: true}));
+app.use(cors());
 //  get css
 app.use('/style',express.static(path.join(__dirname,'..','Client/style')));
 app.use(express.static(path.join(__dirname,'..','Client')));
@@ -29,6 +31,5 @@ require('./config/mongoose.config')
 
 // routes
 
-
-
+app.use('/task', taskRoute);
 app.listen(port , ()=> console.log('listening on port', port));
