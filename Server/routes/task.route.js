@@ -1,11 +1,11 @@
-const taskController = require('../controllers/task.controller');
 const express = require('express');
-const router = express.Router();
+const router = express.Router(); 
+const taskController = require('../controllers/task.controller');
 
+router.post('/createTask', taskController.createTask);
 router.get('/', taskController.getTasks);
 router.get('/:taskId', taskController.getOneTask);
 
-router.post('/create', taskController.createTask);
 router.put('/edit/:taskId', taskController.updateTask);
 router.delete('/delete/:taskId' , taskController.deleteTask);
 

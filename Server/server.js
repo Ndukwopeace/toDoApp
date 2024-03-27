@@ -1,19 +1,23 @@
 const express = require('express');
+// const bodyParser = require('body-parser');
 const app = express();
+
+
 const path = require('path');
-const cors = require('cors')
+const cors = require('cors');
 const taskRoute = require('../Server/routes/task.route')
-const port = 7000
+const port = 3000
 
 
-app.use(express.urlencoded({ extended: true}));
-app.use(express.json());
-app.use(cors());
+
 //  get css
 app.use('/style',express.static(path.join(__dirname,'..','Client/style')));
-
 app.use(express.static(path.join(__dirname,'..','Client')));
 
+app.use(cors());
+app.use(express.urlencoded({ extended: false}));
+app.use(express.json());
+app.use('/task', taskRoute);
 // console.log(path.join(__dirname,'..','Client/app.js'));
 
 app.get('/', (req, res) => {
@@ -25,7 +29,6 @@ require('./config/mongoose.config')
 
 // routes
 
-app.use('/task', taskRoute);
 
 
 app.listen(port , ()=> console.log('listening on port', port));

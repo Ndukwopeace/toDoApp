@@ -8,7 +8,7 @@ module.exports = {
             return res.status(200).json({ task: task });
 
         } catch (err) {
-            return res.sendStatus(500).json(err);
+            return res.status(500).json({error:err.message});
         }
     },
 
