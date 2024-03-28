@@ -24,7 +24,7 @@ module.exports = {
     getTasks: async (req, res) => {
         try {
             const Tasks = await taskModel.find({});
-            return res.status(200).json({ Tasks: Tasks });
+            return res.status(200).json(Tasks);
 
         } catch (err) {
             return res.status(500).json(err);
