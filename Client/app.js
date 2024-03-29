@@ -4,8 +4,6 @@ $(function () {
     const Base_Url = "http://localhost:3000/task";
     // my variables   
     let tasks = [];
-
-    
     let newList = $("<ul></ul>");
     let completedList = $("<ul></ul>");
     const completedTasks = []; 
@@ -73,6 +71,7 @@ $(function () {
 
     $("#form").on("submit", (e) => {
         e.preventDefault();
+        
         const name = $('#name').val();
         console.log(name);
         const todo = { name };
@@ -97,10 +96,11 @@ $(function () {
         }
         )
             .catch(err => console.log(err))
-
         $('#name').val("")
     })
 
+
+    
 
     const deleteTask = (taskId) => {
 
@@ -129,9 +129,6 @@ $(function () {
                     console.log("checkbox is not checked")
                 }
             });
-
-
-
     }, 1000);
 
 
@@ -139,9 +136,10 @@ $(function () {
 
     setTimeout(() => {
 
-        $("#delete").on("click", function (){
-             const value = $(this).attr("value");
+        $("button#delete").on("click", function (){
+                const value = $(this).val();
                 return deleteTask(value);
+            
         })
 
     }, 1000)
@@ -161,6 +159,32 @@ $(function () {
             .catch(err => console.log(err));
 
     }
+    // editTask ==============================================================================>
+
+    const editTask = (taskId) => {
+        fetch(Base_Url + `/edit/${taskId}` , {
+            method: 'PUT',
+            headers:  { "Content-Type": "application/json" },
+            body: JSON.stringify()
+        }).then(res => {
+            if (!res.status) return console.log(res);
+            return res.json();
+        }).then(data => console.log(data))
+            .catch(err => console.log(err));
+    }
+
+    setTimeout(()=>{
+        $('button#edit').on('click',function(){
+            // get value using this ;
+             const value = $(this).val();
+             console.log(value);
+             // set value of input #name to value;
+             $('#name').attr('value', value);
+    
+        })
+    },1000)
+
+
 
 
     $('h1').on("click", () => { $('h1').html('hello') })
