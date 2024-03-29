@@ -34,7 +34,7 @@ module.exports = {
         try {
             const Task = await taskModel.findOne({ _id: req.params.taskId });
 
-            return res.status(200).json({ Task: Task });
+            return res.status(200).json(Task);
 
         } catch (err) {
             return res.status(500).json(err);
