@@ -17,23 +17,34 @@
 
     <section class="heroSection">
            <h3>Your Task Companion </h3> 
+           <span class="pendingTasks"></span>
+           <span class="completedTasks"></span>
     </section>
 
-    <section class="formDiv">
-        <form action="" method= " post " id="form">
-            <h3>Add a task</h3>
-            <div >
-                <input type="text" placeholder="Add a task ..." id="name" />
-            </div>
-                <button type="submit"  id="submit"  style="margin-top: 1rem;">
-                    Add
-                </button>
-        </form>
-    </section>
    <section class="tasks" id="tasks" >
-    <h3 > Your Tasks</h3>
    
-   </section>
+    <div id="pending" >
+        <h3 > Your Tasks</h3>
+
+    </div>
+
+    <div id="completed">
+        <h3>Completed Tasks</h3>
+    </div>
+   
+</section>
+
+   <section class="formDiv">
+    <form action="" method= "post" id="form">
+        <h3>Add a task</h3>
+        <div >
+            <input type="text" placeholder="Add a task ..." id="name" />
+        </div>
+            <button type="submit"  id="submit"  style="margin-top: 1rem;">
+                Add
+            </button>
+    </form>
+</section>
 
     <!-- Script -->
 <div class="test"></div>
